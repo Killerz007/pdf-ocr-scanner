@@ -38,7 +38,7 @@ Do not delete `.scan2doc` until the job is complete and you are satisfied with t
 | 500-page text-heavy scan, CPU only | `fast_cpu`, `cpu` | Off if absent | Off | Off |
 | English-only material | Language `en` | As present | As needed | As present |
 
-On the included dense English sample, the quality profile took about 174 seconds for one page on this test machine's CPU. At that rate 500 pages is approximately 24 hours, so use an NVIDIA GPU or the fast profile for large jobs. Actual time varies greatly with CPU/GPU, resolution, tables, formulas, and page density.
+On the test sample, the quality profile took about 174 seconds for one page on my machine's CPU. At that rate 500 pages is approximately 24 hours, so use any high end GPU or the fast profile for large jobs. Actual time varies greatly with CPU/GPU, resolution, tables, formulas, and page density.
 
 ## Offline and privacy behavior
 
