@@ -1,5 +1,7 @@
 # PDF OCR Scanner
 
+[![CI](https://github.com/Killerz007/pdf-ocr-scanner/actions/workflows/ci.yml/badge.svg)](https://github.com/Killerz007/pdf-ocr-scanner/actions/workflows/ci.yml)
+
 **PDF OCR Scanner** is the repository and project name. The Windows desktop application in this repository is named **Scan2Doc**.
 
 Scan2Doc is a local Windows desktop wrapper around PaddleOCR 3.7 and PP-StructureV3. It converts scanned PDFs into one combined Markdown file and one editable Word document while keeping page-level results so interrupted jobs can resume.
