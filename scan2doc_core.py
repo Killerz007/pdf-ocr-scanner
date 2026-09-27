@@ -14,7 +14,7 @@ from pathlib import Path, PurePosixPath
 from typing import Any, Callable, Iterable, Protocol
 
 
-APP_VERSION = "1.0.0"
+APP_VERSION = "1.0.0-beta"
 ProgressCallback = Callable[[str, int, int], None]
 
 
