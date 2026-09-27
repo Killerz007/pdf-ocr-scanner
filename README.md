@@ -1,15 +1,22 @@
 # PDF OCR Scanner
 
-PDF OCR Scanner (the desktop app is named **Scan2Doc**) is a local Windows desktop wrapper around PaddleOCR 3.7 and PP-StructureV3. It converts scanned PDFs into one combined Markdown file and one editable Word document while keeping page-level results so interrupted jobs can resume.
+[![CI](https://github.com/Killerz007/pdf-ocr-scanner/actions/workflows/ci.yml/badge.svg)](https://github.com/Killerz007/pdf-ocr-scanner/actions/workflows/ci.yml)
+
+**PDF OCR Scanner** is the repository and project name. The Windows desktop application in this repository is named **Scan2Doc**.
+
+Scan2Doc is a local Windows desktop wrapper around PaddleOCR 3.7 and PP-StructureV3. It converts scanned PDFs into one combined Markdown file and one editable Word document while keeping page-level results so interrupted jobs can resume.
 
 ## Install
 
-1. Copy the entire `Scan2Doc` folder to the Desktop.
-2. Install 64-bit Python 3.10, 3.11, 3.12, or 3.13 from python.org if none is already installed. The installer automatically chooses the newest supported version. Python 3.14 is not yet used because the pinned Paddle runtime does not provide a compatible Windows package.
-3. Double-click **Install Scan2Doc.bat**. The isolated environment is large; allow several gigabytes of free disk space.
-4. Double-click **Start Scan2Doc.bat**.
+1. Open the [Releases page](https://github.com/Killerz007/pdf-ocr-scanner/releases), select the newest release, and download **Source code (zip)** under Assets. Developers may instead clone the repository with Git.
+2. Extract the downloaded archive to a folder where you want to keep the application. Keep all extracted files together.
+3. Install 64-bit Python 3.10, 3.11, 3.12, or 3.13 from [python.org](https://www.python.org/downloads/windows/) if none is already installed. The installer automatically chooses the newest supported version. Python 3.14 is not yet used because the pinned Paddle runtime does not provide a compatible Windows package.
+4. Double-click **Install Scan2Doc.bat**. The isolated environment is large, so allow several gigabytes of free disk space.
+5. Double-click **Start Scan2Doc.bat**.
 
 The first OCR run downloads PaddleOCR's official model files to the current Windows user's `.paddlex` model cache. This is a one-time online operation for each selected model/profile. Click **Prepare offline models** before disconnecting from the internet.
+
+The included installer configures the CPU version of PaddlePaddle. The `gpu:0` option requires a compatible official PaddlePaddle GPU installation performed separately and is not covered by this project's automated tests.
 
 ## Use
 
@@ -38,7 +45,7 @@ Do not delete `.scan2doc` until the job is complete and you are satisfied with t
 | 500-page text-heavy scan, CPU only | `fast_cpu`, `cpu` | Off if absent | Off | Off |
 | English-only material | Language `en` | As present | As needed | As present |
 
-On the test sample, the quality profile took about 174 seconds for one page on my machine's CPU. At that rate 500 pages is approximately 24 hours, so use any high end GPU or the fast profile for large jobs. Actual time varies greatly with CPU/GPU, resolution, tables, formulas, and page density.
+On the test sample, the quality profile took about 174 seconds for one page on the test machine's CPU. At that rate 500 pages is approximately 24 hours, so use the fast profile or a separately configured compatible GPU for large jobs. Actual time varies greatly with CPU/GPU, resolution, tables, formulas, and page density.
 
 ## Offline and privacy behavior
 
@@ -67,4 +74,8 @@ No OCR engine guarantees error-free text. The real sample preserved headings, qu
 - **Password-protected PDF:** make an unlocked copy first; passwords are intentionally not stored.
 - **Audit dependencies:** run **Run Security Audit.bat** while online.
 
-See [SECURITY_REVIEW.md](SECURITY_REVIEW.md) for the project comparison, threat review, and residual risks.
+## Security and contributing
+
+Report vulnerabilities privately as described in [SECURITY.md](SECURITY.md). Do not include unredacted documents, logs, local paths, or exploit details in a public issue.
+
+See [SECURITY_REVIEW.md](SECURITY_REVIEW.md) for the project comparison, threat review, and residual risks. Practical contribution steps are in [CONTRIBUTING.md](CONTRIBUTING.md).
